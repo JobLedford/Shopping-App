@@ -3,4 +3,35 @@
 }*/
 nav {
   background-color: blue;
+  height:125px;
+}
+h1.shop {
+  position:relative;
+  top:25px;
+  left:25px;
+}
+.icon {
+  float:right;
+  margin-right:10px;
+  margin-top: 3px;
+}
+p.total {
+  float:right;
+  margin-right:100px;
+}
+h3.des {
+  margin-left: 35px;
+}
+img.yoyo {
+  width:150px;
+  margin-left: 50px;
+}
+p.quantity {
+  position: relative;
+  left: 240px;
+  bottom: 70px;
+}
+span.number {
+  border: 2px solid lightgray;
+  padding:8px;
 }

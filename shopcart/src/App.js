@@ -1,6 +1,7 @@
 import './App.css';
-import React, { Component } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { ListGroup, ListGroupItem } from "reactstrap";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -11,27 +12,27 @@ class Shop extends React.Component {
       products: [
         {
           id: 1, 
-          image: './products/cologne.jpg',
+          image: require('./products/cologne.jpg'),
           desc: 'Unisex Cologne',
-          value: 1
+          value: 0
         },
         {
           id: 2, 
-          image: './products/iwatch.jpg',
+          image: require('./products/iwatch.jpg'),
           desc: 'Apple iWatch',
-          value: 1
+          value: 0
         },
         {
           id: 4, 
-          image: './products/mug.jpg',
+          image: require('./products/mug.jpg'),
           desc: 'Unique Mug',
-          value: 1
+          value: 0
         },
         {
           id: 4, 
-          image: './products/wallet.jpg',
+          image: require('./products/wallet.jpg'),
           desc: 'Mens Wallet',
-          value: 1
+          value: 0
         }
       ]
     }
@@ -39,31 +40,50 @@ class Shop extends React.Component {
 
 
   render() {
+    const Quantity = this.state.products.map((quantity) => {
+      return quantity.value;
+    });
+
+    let totalQuantity = Quantity.reduce((total,value) => total + value,0);
+    let shoppingItem = <Shopper products={this.state.products} />;
+
     return(
       <div>
         <nav>
-          <h1>Shop to React</h1>
-          <FontAwesomeIcon icon={faShoppingCart} />
-          <p>0 items</p> {/* this will haved to be changed to a func that can count total */}
+          <h1 className="shop">Shop to React</h1>
+          <p className="total">{totalQuantity} items</p> {/* this will haved to be changed to a func that can count total */}
+          <FontAwesomeIcon 
+            icon={faShoppingCart} 
+            className="icon"
+          />
         </nav>
-
-        <div>
-          {this.state.products.map((product,index) => {
-            return(
-            <div key={index}>
-              <h3>{product.desc}</h3>
-              <img src={product.image} alt={product.desc} />              
-              <div>
-              
-              </div>
-              <hr />
-            </div>
-            )
-          })}
-        </div>
+        {shoppingItem}
       </div>
     )
   }
 }
+
+function Shopper(props) {
+  return(
+    <ListGroup>
+      {props.products.map((product) => {
+        return(
+        <ListGroupItem key={product.id}>
+          <h3 className="des">{product.desc}</h3>
+          <img 
+            src={product.image} 
+            alt={product.desc} 
+            className="yoyo"
+          />      
+          <p className="quantity">
+            <span className="number">{product.value}</span> quantity
+          </p>      
+        </ListGroupItem>
+        );
+      })}
+    </ListGroup>
+  );
+}
+
 
 export default Shop;
