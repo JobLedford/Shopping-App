@@ -5,6 +5,7 @@ import { ProductData } from "./products";
 import Nav from "./navbar";
 import Shopper from './displayProducts';
 import Cart from './cart';
+import SignIn from "./signin"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 class Shop extends React.Component {
@@ -77,7 +78,10 @@ class Shop extends React.Component {
             />
             <Route 
               path="/cart" 
-              element={<Cart selectedProducts={this.state.products.filter(product => product.value > 0)} />} 
+              element={<Cart products={this.state.products} selectedProducts={this.state.products.filter(product => product.value > 0)} />} 
+            />
+            <Route
+              path="/signin" element={<SignIn />}
             />
           </Routes>
         </div>

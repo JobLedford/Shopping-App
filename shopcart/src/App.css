@@ -72,6 +72,24 @@ h2.carttext {
 }
 p.carttext {
   text-align:center;
-  padding:20px;
+  padding:5px;
   font-size: 30px;
+}
+
+Button.empty {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, 200%);
+}
+.checkout-button {
+  padding:15px;
+}
+div.buttons2 {
+  position: relative;
+  left: 38%;
+  -ms-transform: translate(-50%, -40%);
+  transform: translate(1%, -40%);
 }
