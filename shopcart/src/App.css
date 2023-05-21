@@ -10,14 +10,24 @@ h1.shop {
   top:25px;
   left:25px;
 }
+h1.shop a {
+  text-decoration: none;
+  color: black;
+}
 .icon {
   float:right;
   margin-right:10px;
   margin-top: 3px;
+  color:black;
 }
 p.total {
   float:right;
   margin-right:100px;
+  padding:10px;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  bottom:12px;
 }
 h3.des {
   margin-left: 35px;
@@ -28,10 +38,40 @@ img.yoyo {
 }
 p.quantity {
   position: relative;
-  left: 240px;
-  bottom: 70px;
+  left: 325px;
+  bottom: 155px;
 }
 span.number {
+  position: relative;
+  top: 39px;
+  left: 48px;
   border: 2px solid lightgray;
   padding:8px;
+}
+div.buttons {
+  position:relative;
+  left:260px;
+  bottom: 85px;
+}
+img.cartpics {
+  width: 200px;
+  position: relative;
+  bottom: 12px;
+}
+li.cartlist {
+  list-style-type: none;
+}
+h3.cartdesc {
+  font-weight: bold;
+}
+h2.carttext {
+  text-align:center;
+  padding:20px;
+  font-weight: bolder;
+  font-size: 50px;;
+}
+p.carttext {
+  text-align:center;
+  padding:20px;
+  font-size: 30px;
 }

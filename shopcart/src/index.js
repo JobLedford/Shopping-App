@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-<Shop />, document.getElementById('root')
+<Shop />
 );
 
 // If you want to start measuring performance in your app, pass a function
