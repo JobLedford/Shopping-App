@@ -1,6 +1,3 @@
-/* {
-  background-color: black;
-}*/
 nav {
   background-color: blue;
   height:125px;
@@ -92,4 +89,14 @@ div.buttons2 {
   left: 38%;
   -ms-transform: translate(-50%, -40%);
   transform: translate(1%, -40%);
+}
+h3.price {
+  color: Red;
+  position: relative;
+  left: 18%;
+  bottom: 38px;
+}
+div.sorting {
+  position: relative;
+  left: 40%;
 }

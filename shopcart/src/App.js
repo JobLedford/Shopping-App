@@ -58,13 +58,47 @@ class Shop extends React.Component {
     });
   };
 
+  handleSortChange = (event) => {
+    const selected = event.target.value;
+
+    if(selected === 'normal') {
+      this.sortProductsById();
+    } else if (selected === 'lowest') {
+      this.sortProductsById(true);
+    } else if (selected === 'highest') {
+      this.sortProductsById(false);
+    }
+  };
+
+  sortProductsById = (ascending) => {
+    this.setState((prevState) => {
+      const sortedProducts = prevState.products.slice().sort((a,b) => {
+        if (a.price < b.price) {
+          return ascending ? -1 : 1;
+        } else if (a.price > b.price) {
+          return ascending ? 1 : -1;
+        }
+        return 0;
+      });
+      return {
+        products: sortedProducts
+      };
+    });
+  }
+
   render() {
     return(
       <Router>
         <div className="Shop">
-          <Nav
-            products={this.state.products}
-          />
+          <Nav products={this.state.products} />
+          <div class="sorting">
+            <label htmlFor="sort">Sort by:</label>
+            <select id="sort" onChange={this.handleSortChange}>
+              <option value="normal">Normal</option>
+              <option value="lowest">Lowest</option>
+              <option value="highest">Highest</option>
+            </select>
+          </div>
           <Routes>
             <Route 
               exact path="/" 

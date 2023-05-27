@@ -20,6 +20,7 @@ function Shopper(props) {
             return(
             <ListGroupItem key={product.id}>
               <h3 className="des">{product.desc}</h3>
+              <h3 className="price">${product.price}</h3>
               <img 
                 src={product.image}
                 alt={product.desc} 
